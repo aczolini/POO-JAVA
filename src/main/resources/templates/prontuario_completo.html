@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <meta charset="utf-8"/>
+        <title>Sistema Gerenciador de Vendas (SGV)</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div th:replace="header :: header">...</div>
+        <div class="container" style="margin-top: 50px; width: 50%;">
+            <h2 class="alert alert-dark">Prontuário</h2>
+            <form action="#" th:action="@{/pacientes}" th:object="${paciente}" method="get">
+                <input type="hidden" th:field="*{id}" id="id">
+                <hr class="mb-4">
+                <tr>
+                        <th>NOME: </th>
+                        <td th:text="${paciente.nome}"></td>
+                </tr>
+                    <br><br>
+                <tr>
+                        <th>NOME SOCIAL: </th>
+                        <td th:text="${paciente.nomeSocial}"></td>
+                </tr>
+                    <br><br>
+                <tr>
+                        <th>CPF: </th>
+                        <td th:text="${paciente.cpf}"></td>
+                </tr> 
+                    <br><br>
+                <tr>
+                        <th>DATA DE NASCIMENTO: </th>
+                        <td th:text="${paciente.getDataNascimentoFormatada()}"></td>
+                </tr> 
+                    <br><br>
+                <tr>
+                        <th>IDADE: </th>
+                        <td th:text="${paciente.idade()}"></td>
+                </tr> 
+                    <br><br>                            
+                <tr>
+                        <th>GÊNERO: </th>
+                        <td th:text="${paciente.genero}"></td>
+                </tr> 
+                     <br><br>
+                <tr>
+                        <th>ESTADO CIVIL: </th>
+                        <td th:text="${paciente.estadoCivil}"></td>
+                </tr>
+                    <br><br>
+                <tr>
+                        <th>FILHOS: </th>
+                        <td th:text="${paciente.filhos}"></td>
+                </tr> 
+                    <br><br>
+                <tr>
+                        <th>DIAGNÓSTICO: </th>
+                        <td th:text="${paciente.diagnostico}"></td>
+                </tr>   
+                    <br><br>
+                <tr>
+                        <th>SITUAÇÃO: </th>
+                        <td th:text="${paciente.situacao}"></td>
+                </tr>   
+                    <br><br>
+                        <th>CONSULTAS:</th><br><br>
+                <tr th:each="c : ${paciente.listaConsultas}">
+                        <td th:text="${c.getDataConsultaFormatada()}"></td><br>
+                        <td th:text="${c.anotacoes}"></td><br><br>
+                </tr>
+                <hr class="mb-4">
+                <a href="/prontuarios" class="btn btn-secondary btn-block" >Fechar</a>
+            </form>
+        </div>
+    </body>
+</html>

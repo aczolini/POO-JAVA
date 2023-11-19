@@ -37,9 +37,6 @@ public class Paciente extends Pessoa{
     public void adicionarConsulta(Consulta consulta){
         listaConsultas.add(consulta);
     }
-    public void removerConsulta (Consulta consulta){
-        listaConsultas.remove(consulta);
-    }
     
     public String getDataNascimentoFormatada() {
         if (dataNascimento == null){

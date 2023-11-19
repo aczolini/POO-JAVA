@@ -31,7 +31,7 @@ public class PacienteController {
     private PacienteRepository pacienteRepository;
 
     
-     @GetMapping("/pacientes")
+    @GetMapping("/pacientes")
     public String listar(Model model) {
         model.addAttribute("listaPacientes", pacienteRepository.findAll());
         return "gerenciar_pacientes";

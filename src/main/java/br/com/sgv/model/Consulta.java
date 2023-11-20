@@ -37,11 +37,7 @@ public class Consulta {
         return dataHoraConsulta.format(formato);
     }
 
-//    public LocalDateTime getDataHoraConsulta() {
-//        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        String dataHora = dataHoraConsulta.format(formato);
-//        return LocalDateTime.parse(dataHora);
-//    }
+
 
     public String getDataConsultaFormatada() {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");

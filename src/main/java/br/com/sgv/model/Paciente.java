@@ -31,7 +31,6 @@ public class Paciente extends Pessoa{
     private int filhos;
     private String diagnostico;
     private String situacao;
-    private float valor;
     @OneToMany (mappedBy = "paciente",  cascade = CascadeType.ALL)
     private List<Consulta> listaConsultas = new ArrayList();
     

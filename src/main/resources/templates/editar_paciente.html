@@ -79,13 +79,6 @@
                     </div>    
                     <span th:if="${#fields.hasErrors('situacao')}" th:errors="*{situacao}" class="alert alert-warning"></span>                        
                 </div>  
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <label for="situacao">Valor da Consulta: </label>
-                        <input type="text"  th:field="*{valor}" id="valor" placeholder="Preço por consulta" class="form-control">
-                    </div>    
-                    <span th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}" class="alert alert-warning"></span>                        
-                </div>  
                 <hr class="mb-4">
                 <input type="submit" value="Salvar" class="btn btn-success btn-block">
                 <a href="/pacientes" class="btn btn-secondary btn-block" >Fechar</a>
